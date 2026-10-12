@@ -1,0 +1,132 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+# NOTE: we build the container image first, and then we log in and push the container image;
+#       this is intentional, as it still allows us maximum flexibility when building the
+#       container image (vs. "buildAndPush") and it also allows us to diagnose image build
+#       issues separately from container registry connection or push issues.
+
+# NOTE: this single pipeline file serves both branches (so that merging dev into main can
+#       never carry a dev-only pipeline into main):
+#         main -> smartbrowser.site     (smartbrowser-website-deployment.yaml)
+#         dev  -> dev.smartbrowser.site (smartbrowser-website-dev-deployment.yaml)
+#       builds of any other branch (e.g. a manual run) build and push an image but do not
+#       update the deployment repository.
+
+trigger:
+- main
+- dev
+
+# NOTE: without this, Azure Pipelines would also build pull requests, and a PR build must
+#       never update a deployment file
+pr: none
+
+pool:
+  vmImage: 'ubuntu-24.04'
+
+variables:
+- group: 'github-access'
+- name: 'containerRegistry'
+  value: 'acr-morphic'
+- name: 'repository'
+  value: 'smartbrowser-website'
+# NOTE: the branch prefix keeps main and dev images from ever sharing a tag (e.g. main-20261012.1)
+- name: 'tag'
+  value: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+  - name: 'deploymentFile'
+    value: 'smartbrowser-website-deployment.yaml'
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/dev') }}:
+  - name: 'deploymentFile'
+    value: 'smartbrowser-website-dev-deployment.yaml'
+
+stages:
+- stage: Docker
+  displayName: Build and push Docker image
+  jobs:
+  - job: DockerBuildAndPush
+    displayName: Build and push Docker image
+    steps:
+    - task: Docker@2
+      displayName: Build Docker image
+      inputs:
+        command: build
+        containerRegistry: $(containerRegistry)
+        dockerfile: './Dockerfile'
+        repository: $(repository)
+        tags: $(tag)
+    - task: Docker@2
+      displayName: Log in to container registry
+      inputs:
+        command: login
+        containerRegistry: $(containerRegistry)
+    - task: Docker@2
+      displayName: Push docker image
+      inputs:
+        command: push
+        containerRegistry: $(containerRegistry)
+        repository: $(repository)
+        tags: $(tag)
+    - task: Docker@2
+      displayName: Log out of container registry
+      inputs:
+        command: logout
+        containerRegistry: $(containerRegistry)
+
+- ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/dev')) }}:
+  - stage: Update
+    displayName: Update deployment repository
+    jobs:
+    - job: UpdateDeploymentRepo
+      displayName: Update deployment repository
+      steps:
+      - checkout: none
+      - task: Bash@3
+        env:
+          TAG: $(tag)
+          DEPLOYMENT_FILE: $(deploymentFile)
+          BRANCH: main
+          GITHUB_USERNAME: deploybot-rtf
+          GITHUB_ACCESS_TOKEN: $(DeploybotAccessToken)
+        inputs:
+          targetType: 'inline'
+          workingDirectory: ./
+          script: |
+            # if any command returns an error, stop the script
+            set -e
+
+            # DEBUG: output all commands to terminal
+            #set -x
+
+            git clone https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com/raisingthefloor/deploy-smartbrowser-website -b ${BRANCH}
+            cd deploy-smartbrowser-website
+
+            # update our build tag
+            sed -i "s|image: morphic.azurecr.io/smartbrowser-website:\S*|image: morphic.azurecr.io/smartbrowser-website:${TAG}|" ${DEPLOYMENT_FILE}
+
+            # DEBUG: print out the updated deployment file
+            # cat ${DEPLOYMENT_FILE}
+
+            # NOTE: re-running a failed job reuses the same tag; in that case, there is nothing to commit
+            if git diff --quiet -- ${DEPLOYMENT_FILE}; then
+              echo "${DEPLOYMENT_FILE} already references image tag ${TAG}; nothing to update."
+              exit 0
+            fi
+
+            # NOTE: we could create a "deploybot" email, but we use a "buildmaster" email instead
+            git config --global user.email "buildmaster@raisingthefloor.org"
+            git config --global user.name "deploybot-rtf"
+            git commit ${DEPLOYMENT_FILE} -m "deploybot: updating ${DEPLOYMENT_FILE} image tag to ${TAG}"
+
+            # NOTE: a main build and a dev build can finish at nearly the same time; if the other
+            #       build pushed first, rebase onto its commit and try again
+            for attempt in 1 2 3; do
+              if git push; then
+                exit 0
+              fi
+              sleep 5
+              git pull --rebase
+            done
+            echo "##vso[task.logissue type=error]Could not push the updated image tag to deploy-smartbrowser-website."
+            exit 1
