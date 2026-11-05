@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transit notice: the failures – Smart Browser</title>
+<meta name="description" content="The documented failures in the transit notice demo page and the WCAG criteria involved.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Transit notice: the failures – Smart Browser">
+<meta property="og:description" content="The documented failures in the transit notice demo page and the WCAG criteria involved.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Transit service notice: the failures</h1>
+    <p class="lede">What is wrong with the <a href="/demo/transit-notice.html">transit notice demo page</a>, and which WCAG 2.2 success criteria each problem fails. This list is the page's test specification.</p>
+    <table>
+      <caption>Deliberate failures in the transit notice demo page</caption>
+      <thead><tr><th scope="col">Problem</th><th scope="col">WCAG 2.2 criteria</th><th scope="col">What a smart browser might do</th></tr></thead>
+      <tbody>
+        <tr><td>Body text is 11 pixels in light gray (#9a9a9a) on white, about 2.8:1</td><td>1.4.3 Contrast (Minimum); 1.4.4 Resize Text in spirit</td><td>Raise contrast to the person's minimum; enforce a minimum text size</td></tr>
+        <tr><td>Text is fully justified</td><td>1.4.8 Visual Presentation (AAA)</td><td>Set left alignment</td></tr>
+        <tr><td>Two icon buttons have no accessible name</td><td>4.1.2 Name, Role, Value; 2.4.4 Link Purpose for the equivalent links</td><td>Infer names from the icons and add them as labels</td></tr>
+        <tr><td>&ldquo;ALERT&rdquo; blinks indefinitely</td><td>2.2.2 Pause, Stop, Hide</td><td>Stop the blinking and note that it was blinking</td></tr>
+        <tr><td>The detour map (inline SVG) has no text alternative</td><td>1.1.1 Non-text Content</td><td>Describe the image; answer questions about it</td></tr>
+        <tr><td>No heading markup; the title is a styled span</td><td>1.3.1 Info and Relationships; 2.4.6 Headings and Labels</td><td>Mark the title as a heading</td></tr>
+        <tr><td>No page language declared beyond the root; no landmarks</td><td>1.3.1 Info and Relationships (landmarks are a technique, not a requirement)</td><td>Add landmarks for navigation and main content</td></tr>
+        <tr><td>&ldquo;Click here&rdquo; link</td><td>2.4.4 Link Purpose (In Context) is arguably met by the sentence; 2.4.9 Link Purpose (Link Only) (AAA) fails</td><td>Rewrite the link text to say where it goes</td></tr>
+        <tr><td>Email field has no label, only a placeholder</td><td>1.3.1; 3.3.2 Labels or Instructions; 4.1.2</td><td>Add a visible label tied to the field</td></tr>
+        <tr><td>Error shown as the word &ldquo;Invalid&rdquo; in red, not associated with the field, with no instruction</td><td>3.3.1 Error Identification; 3.3.3 Error Suggestion; 1.4.1 Use of Color</td><td>Associate the message with the field, add an icon and the word Error, and say how to fix it</td></tr>
+        <tr><td>Paragraph written at college reading level; idiom &ldquo;back on track&rdquo;; abbreviations ADA and ETA unexpanded</td><td>3.1.5 Reading Level (AAA); 3.1.3 Unusual Words (AAA); 3.1.4 Abbreviations (AAA)</td><td>Rewrite to the person's chosen level; make the idiom and abbreviations explainable</td></tr>
+      </tbody>
+    </table>
+    <p><a href="/demo/">Back to the demonstration pages</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

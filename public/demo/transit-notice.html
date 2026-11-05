@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor City Transit</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; color: #9a9a9a; font-size: 11px; line-height: 1.3; background: #fff; margin: 0; padding: 16px; text-align: justify; max-width: 720px; margin-inline: auto; }
+  .demo-warning { font-family: system-ui, sans-serif; font-size: 16px; color: #15213b; background: #fff3c4; border: 2px solid #8a6d00; padding: 10px 14px; text-align: left; margin-bottom: 20px; }
+  .demo-warning a { color: #064f51; }
+  .bar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: #777; font-size: 12px; text-align: left; }
+  .bar .logo { font-weight: 700; flex: 1; }
+  .icon { width: 22px; height: 22px; display: inline-grid; place-items: center; border: 1px solid #ccc; border-radius: 4px; color: #888; background: none; font-size: 12px; cursor: pointer; }
+  .tagline { font-size: 10px; color: #aaa; margin-bottom: 10px; }
+  .alert { color: #c66; font-weight: 700; animation: blink 1.2s steps(2, start) infinite; }
+  @keyframes blink { to { visibility: hidden; } }
+  .hed { font-size: 13px; color: #777; font-weight: 700; display: block; margin: 4px 0; text-align: left; }
+  img, svg { display: block; width: 100%; max-width: 320px; margin: 10px 0; }
+  a { color: #88a; text-decoration: none; }
+  input { border: 1px solid #ccc; border-radius: 3px; padding: 4px 6px; font-size: 11px; width: 160px; }
+  .err { color: #d33; margin-left: 6px; }
+</style>
+</head>
+<body>
+<div class="demo-warning"><strong>Deliberately inaccessible demonstration page.</strong> This fictional page exists for smart browsers to fix. It fails WCAG on purpose. <a href="/demo/">About the demo pages</a> &middot; <a href="/demo/transit-notice-failures.html">List of its failures</a> &middot; <a href="/">Smart Browser home</a></div>
+<div class="bar">
+  <span class="logo">Harbor City Transit</span>
+  <button class="icon">&#9906;</button>
+  <button class="icon">&#8801;</button>
+</div>
+<div class="tagline">Moving the city, one stop at a time</div>
+<span class="alert">ALERT</span>
+<span class="hed">Route 7 service change starting Monday</span>
+<p>Due to unforeseen infrastructure remediation activities, Route 7 will be subject to a temporary diversion, with anticipated restoration of standard operations contingent upon contractor completion. Riders who need ADA paratransit should call ahead. We expect service to be back on track by Friday; the ETA for each stop is on the schedule page.</p>
+<svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="90" fill="#eef3e8"/>
+  <path d="M10 60 H120 L160 25 H310" fill="none" stroke="#7a9" stroke-width="6"/>
+  <path d="M120 60 H200 L230 25" fill="none" stroke="#e74" stroke-width="6" stroke-dasharray="10 6"/>
+  <rect x="150" y="48" width="60" height="22" fill="#fc5" stroke="#b80" stroke-width="2"/>
+  <circle cx="40" cy="60" r="6" fill="#345"/><circle cx="280" cy="25" r="6" fill="#345"/>
+</svg>
+<p><a href="/demo/transit-notice.html#schedule">Click here</a> for stop-by-stop times.</p>
+<form onsubmit="return false">
+  <input type="text" placeholder="Email"> <span class="err">Invalid</span>
+</form>
+</body>
+</html>

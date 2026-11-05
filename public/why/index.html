@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why this matters – Smart Browser</title>
+<meta name="description" content="The numbers behind web accessibility today, what a smart browser would change, and the two conditions that are not negotiable.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Why this matters – Smart Browser">
+<meta property="og:description" content="The numbers behind web accessibility today, what a smart browser would change, and the two conditions that are not negotiable.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/" aria-current="page">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Why this matters</h1>
+    <p class="lede">The current approach to web accessibility has produced real progress and has reached a ceiling. The numbers below are the reason to try something that changes where the work happens.</p>
+
+    <h2>Where we are</h2>
+    <ul class="numbers">
+      <li><strong>86</strong><span>success criteria in WCAG 2.2, the standard most laws point to</span></li>
+      <li><strong>200+</strong><span>requirements in the WCAG 3.0 drafts, nearly all needing accessibility expertise to apply</span></li>
+      <li><strong>~60%</strong><span>of types and combinations of disability covered even by a page that passes all of WCAG 2.2, by informed estimate</span></li>
+      <li><strong>95.9%</strong><span>of the top million home pages had detectable WCAG 2 failures in 2026, with 56 errors per page on average (WebAIM Million)</span></li>
+    </ul>
+    <p>We have made a lot of progress in defining what should be done. We have been less successful at writing requirements that cover everyone, because for many needs, especially cognitive, language, and learning disabilities, no one knows how to write a rule that can be tested. And we have been poor at getting sites to do even what the rules require: the share of sites that conform is tiny, and the <a href="https://webaim.org/projects/million/">2026 WebAIM Million report</a> found it getting worse, reversing several years of slow improvement.</p>
+    <p>At the same time, access to digital interfaces has stopped being optional. Health care, school, work, and government all assume you can use a web page. A person who cannot is shut out of ordinary life, and it is not their fault that the page was not built for them.</p>
+
+    <h2>What a smart browser would change</h2>
+    <p>Suppose a browser could fix accessibility problems on the fly, the way browsers already did for one WCAG criterion, 4.1.1 Parsing, which was retired because browsers simply handle malformed markup now. Then:</p>
+    <ul>
+      <li>Any site, including the great majority that have done nothing, would reach the person through their browser in a form they can use.</li>
+      <li>The fit would be to that individual, not to the average person with a disability, and it would cover needs no standard has been able to require.</li>
+      <li>Authors would need to do far less. Only a handful of things can never be fixed in the browser: alternatives to biometric authentication, alternatives to tests that humans pass but AIs cannot, harm done by algorithms on the server, server-imposed time limits, a way to give feedback, and assertions about an organization's processes.</li>
+    </ul>
+    <p>On paper, an analysis of every proposed WCAG 3.0 provision suggested a smart browser could satisfy about 86% now or within a year, 96% within five years, and 97% within ten, with the remaining 3% being the server-side items above. If that held, a future &ldquo;WCAG 4&rdquo; might contain five to seven requirements for authors, most of them needing no accessibility expertise, with everything else becoming recommendations for making content born accessible or easier for a smart browser to fit. Compliance would go way up because, for many sites, there would be nothing left to do.</p>
+    <p>A smart browser could also satisfy almost all of WCAG 2.2's Level AAA criteria, many of the recommendations in the W3C's <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a> that have never fit into WCAG, and other things that are simply not testable.</p>
+
+    <aside class="note">
+      <p><strong>These are projections, not results.</strong> They describe what looked possible when each provision was analyzed one by one. The <a href="/status/">proof of concept</a> has so far achieved about half of the WCAG 2 Level A and AA criteria on failing pages, and that was the easier half. Part of the point of this project is to find out whether the rest holds up. Pointing to a hole in the boat does not sink it; the hole was already there, and we would rather know. Several holes are listed under <a href="/contribute/#questions">open questions</a>.</p>
+    </aside>
+
+    <h2>Two conditions that are not negotiable</h2>
+    <p>Smart browsers should not replace current practice until two things are true:</p>
+    <ol>
+      <li><strong>People with disabilities judge that they work as well or better.</strong> Not dreamers, and not people who would like to do less work. The people who depend on the result.</li>
+      <li><strong>They are available in the common free browsers on ordinary, entry-level computers.</strong> The browsers you find in a library or a school, on the machines you find there. A capability that needs a powerful computer is not a solution.</li>
+    </ol>
+    <p>Current progress suggests both could happen within five to ten years. Time will tell whether that is optimistic or cautious. Until then, the volume-control principle applies: accessible content stays the best starting point, and the smart browser only turns up what arrives too quiet to hear.</p>
+
+    <h2>Who is affected either way</h2>
+    <p>If this works, the effects reach far: much greater coverage of user needs, websites that work for people with disabilities going from a few percent toward nearly all, web authors who no longer need to understand accessibility to produce pages that reach everyone, and a large reduction in the cost of making sites accessible. It would also disrupt the industries that have grown up around the current approach, and could reduce the need for some kinds of testing. Those consequences are part of the discussion, not a footnote to it; see <a href="/library/#chi-2024">the 2024 paper</a> for a fuller account of benefits, problems, and the policy rethinking involved.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

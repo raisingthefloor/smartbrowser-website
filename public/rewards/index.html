@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge awards – Smart Browser</title>
+<meta name="description" content="Funded cash awards for open-source proofs of concept that advance key parts of the smart browser.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Challenge awards – Smart Browser">
+<meta property="og:description" content="Funded cash awards for open-source proofs of concept that advance key parts of the smart browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/" aria-current="page">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Challenge awards</h1>
+    <p class="lede">Cash awards for working proofs of concept that advance key parts of the smart browser, open source so everyone can build on them. The awards are funded; the first challenges and their official rules are being finalized.</p>
+
+    <h2>How the awards work</h2>
+    <ul>
+      <li>Each challenge names a capability or milestone, what a successful demonstration must do, and how it will be judged.</li>
+      <li>Entries must be released under an open-source license (Apache 2.0 or compatible) so that anyone, including browser vendors, can use them.</li>
+      <li>Judging weighs whether it works for people with disabilities, whether it runs on ordinary hardware, how little model work it needs, and how clearly it shows its changes.</li>
+      <li>Awards are given when a challenge's bar is met, not on a deadline. Several entries can meet the same bar; the rules for each challenge say how awards are shared.</li>
+      <li>Official rules, eligibility, and award amounts will be published here for each challenge before it opens. <!-- TODO(gregg): amounts, eligibility (countries, teams, employees of sponsors), judging panel, tax/1099 handling --></li>
+    </ul>
+
+    <h2>Challenges under consideration</h2>
+    <p>These are candidates, listed so that people can start thinking and tell us what is missing. None is open yet.</p>
+    <ul class="plain-list">
+      <li><h3>Fit a real front page</h3><p>Apply a person's settings to a large, live news front page without breaking its layout or scripts, within a time budget, on a mid-range laptop. Addresses <a href="/contribute/#q1">open question 1</a>.</p></li>
+      <li><h3>Smallest model that labels controls</h3><p>Infer accurate names for unlabeled icon buttons and links on a test set of real pages using the smallest possible on-device model. Addresses <a href="/contribute/#q12">open question 12</a>.</p></li>
+      <li><h3>Injection-resistant rewriting</h3><p>Demonstrate a fit pipeline in which page content can never direct the browser to change a form's action, a link's destination, or anything on an authentication page. Addresses <a href="/contribute/#q3">open questions 3</a> and <a href="/contribute/#q4">4</a>.</p></li>
+      <li><h3>Reading level you can slide</h3><p>Rewrite a page's prose to a reading level the person sets, continuously, with the original one tap away and no change of meaning, on device.</p></li>
+      <li><h3>Fit that survives live updates</h3><p>Keep a page fitted while it re-renders itself through live regions and scripts. Addresses <a href="/contribute/#q2">open question 2</a>.</p></li>
+      <li><h3>Judged by the people it is for</h3><p>An evaluation method and results showing people with disabilities comparing fitted pages with what they have today, across several kinds of disability. Addresses <a href="/contribute/#q13">open question 13</a>.</p></li>
+    </ul>
+    <p>Have a challenge to propose, or want to be told when the first ones open? <a href="/contribute/#follow">Follow the project</a> or <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%20challenge%20awards">email us</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

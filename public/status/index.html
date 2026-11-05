@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where things stand – Smart Browser</title>
+<meta name="description" content="The proof-of-concept smart browser, its 85 settings, what the field offers, what the TPAC room said, and what is next.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Where things stand – Smart Browser">
+<meta property="og:description" content="The proof-of-concept smart browser, its 85 settings, what the field offers, what the TPAC room said, and what is next.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/" aria-current="page">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Where things stand</h1>
+    <p class="lede">A first-draft proof of concept exists and runs entirely on a laptop. The field around it is moving fast. Here is what is real, what is projected, and what is next.</p>
+
+    <h2>The proof of concept</h2>
+    <p>To find out whether the idea was more than hand-waving, Gregg Vanderheiden asked his son James, who is not an AI specialist, to try to build one with him. In one person-month, half of it analysis and half programming, they had a first-draft smart browser that:</p>
+    <ul>
+      <li>runs entirely locally on a five-year-old Mac (M1 Max) with Qwen 2.5 14B in about 12 GB of memory, sending nothing off the device;</li>
+      <li>on pages that fail WCAG, satisfies roughly 50% of Level A criteria, 50% of Level AA, 35% of Level AAA, and about 50% of the requirements in the current WCAG 3.0 drafts;</li>
+      <li>uses the model only where judgment is needed, and deterministic repairs and style changes everywhere else;</li>
+      <li>marks every change it makes, shows the original on hover, and can be switched off for a straight-through rendering of the page.</li>
+    </ul>
+    <p>Caveats, in the words of its author: this is a rough first pass; the first half is always the easiest; it is still being tested; there is a long way to go. It also appears that more will be possible, sooner, than expected.</p>
+    <p>The code will be published under an open-source license once it is in shape for others to run. See <a href="/code/">Code</a>.</p>
+
+    <h2>What the proof of concept can adjust today</h2>
+    <p>These are the 85 settings in the proof of concept's panel, as a person would see them, grouped the way the panel groups them. Each one is something the browser does to a page on that person's behalf. Many go beyond anything WCAG requires.</p>
+    <div class="explorer" id="explorer">
+<div class="search"><label for="setting-search">Find a setting</label> <input type="search" id="setting-search" placeholder="e.g. contrast, paste, idiom" autocomplete="off"> <span class="count" role="status"></span></div>
+<details open><summary>Text <span class="n">12 settings</span></summary><dl>
+<dt>Underline links</dt><dd>Underline all links, so color is not the only cue.</dd>
+<dt>Text font</dt><dd>Changes all text on the page to the selected font. “Select Other” opens a list of all the fonts installed on the device.</dd>
+<dt>Text size</dt><dd>Increase all text sizes on the page proportionately (equally). 0 = leave as authored.</dd>
+<dt>Minimum text size</dt><dd>Increase any text smaller than this to this size. 0 or empty = no minimum.</dd>
+<dt>Line height</dt><dd>Space between lines of text. 0 = leave as authored.</dd>
+<dt>Letter spacing</dt><dd>Space between letters in words. 0 = leave as authored.</dd>
+<dt>Word spacing</dt><dd>Space between words. 0 = leave as authored.</dd>
+<dt>Paragraph spacing</dt><dd>Space after each paragraph. 0 = leave as authored.</dd>
+<dt>No double-justified text</dt><dd>Blocks of text are justified left or right only. None are both.</dd>
+<dt>Reflow text</dt><dd>Reflows text within paragraphs and table cells, within the page boundary, so there is no scrolling to read a single line (no horizontal scrolling for horizontal text, no vertical scrolling for vertical text).</dd>
+<dt>Visibly separate blocks</dt><dd>Insert space and a hairline above every meaningful block (headings, regions, articles, navigation) so blocks are visibly separate.</dd>
+<dt>Mark emphasis with text</dt><dd>Add a character in front of bold, italic, caps or underlined text.</dd>
+</dl></details>
+<details><summary>Color and contrast <span class="n">10 settings</span></summary><dl>
+<dt>Minimum text contrast</dt><dd>Increase the contrast of text against its background if it falls below this value.</dd>
+<dt>Maximum text contrast</dt><dd>Decrease the contrast of text against its background if it falls above this value.</dd>
+<dt>Background color</dt><dd>Override the page/background color. Empty = leave as authored.</dd>
+<dt>Text color</dt><dd>Change all text to this color.</dd>
+<dt>Color theme</dt><dd>Set the color theme to Dark, Light, or High Contrast.</dd>
+<dt>Color vision</dt><dd>Shift colors to make them distinguishable from each other with color blindness.</dd>
+<dt>No color-only cues</dt><dd>Add a non-color visible cue for every color-only cue.</dd>
+<dt>Outline faint controls</dt><dd>Add an outline around links, buttons and fields whose own colors give under 3:1 against their background.</dd>
+<dt>Outline shadow-only elements</dt><dd>Add an outline to elements that stand out only by a drop shadow.</dd>
+<dt>Visual once-over (vision)</dt><dd>After a theme is applied, the vision model looks at the result and points at anything still unreadable or unthemed; those spots are fixed at the element that supplies the background.</dd>
+</dl></details>
+<details><summary>Reading <span class="n">6 settings</span></summary><dl>
+<dt>Make all abbreviations clickable items</dt><dd>Make each abbreviation a clickable element that pops up its expansion, or a list of best guesses if it is not known.</dd>
+<dt>Show abbreviation meaning</dt><dd>Show spelled-out abbreviations the first time they appear, if not already shown (show a clickable ? with best guesses if not sure).</dd>
+<dt>Make all idioms clickable items</dt><dd>Make all idioms clickable elements that pop up the meaning of the idiom.</dd>
+<dt>Explain numbers</dt><dd>Write numeric alternatives beside non-standard numbers, for the types checked below.</dd>
+<dt>Convert units</dt><dd>Convert measurements and temperatures and write them beside the original, as checked below.</dd>
+<dt>Variable text simplification</dt><dd>Convert all text that is above the selected level of simplicity to the selected level.</dd>
+</dl></details>
+<details><summary>Images <span class="n">3 settings</span></summary><dl>
+<dt>ALT text</dt><dd>Choose which images to describe in alt text, if not already described in ALT.</dd>
+<dt>Alt text detail</dt><dd>How detailed image descriptions should be at first. (You can always right-click any image and ask any question about it.)</dd>
+<dt>Charts as tables (vision)</dt><dd>Chart images have a table inserted after them presenting the data in the chart.</dd>
+</dl></details>
+<details><summary>Keyboard and pointer <span class="n">10 settings</span></summary><dl>
+<dt>Ensure keyboard navigation</dt><dd>Ensure all items that can be acted on can be reached with standard keyboard navigation techniques.</dd>
+<dt>Fix the Tab order</dt><dd>Fix the Tab and arrow-key navigation order.</dd>
+<dt>Show shortcut key tags</dt><dd>Choose a key to show a small tag beside each element that has a keyboard shortcut, naming the key, and how long the key needs to be held down.</dd>
+<dt>Fix single-key page shortcuts</dt><dd>Turns off single-key shortcuts, or requires a modifier key to activate them.</dd>
+<dt>Flash what I activate</dt><dd>Flash the element I just clicked or activated with Return or Space.</dd>
+<dt>Follow action</dt><dd>When an action reveals a dialog or new content elsewhere on the page, move keyboard focus to it.</dd>
+<dt>Infinite scrolling</dt><dd>Change how an infinite-scrolling page works.</dd>
+<dt>Unblock paste</dt><dd>Allow paste in fields that do not ordinarily allow paste.</dd>
+<dt>Highlight what I point at</dt><dd>Place a ring around whatever the mouse pointer is over.</dd>
+<dt>Allow browser explore</dt><dd>Allow this browser to explore pages in a hidden offline browser to better understand how they operate (reads page code only, does not click things), and set how long it should try before giving up and displaying the page as best it can.</dd>
+</dl></details>
+<details><summary>Page structure <span class="n">16 settings</span></summary><dl>
+<dt>Repair page titles</dt><dd>Add missing or duplicate page titles using the page heading and site name.</dd>
+<dt>Repair structure</dt><dd>Add missing markup for headings, lists and groups, and label links.</dd>
+<dt>Add labels</dt><dd>Give a visible label to things with none (e.g. controls, images, unnamed regions).</dd>
+<dt>Put visible label in the name</dt><dd>Ensure that the visible label is contained in the programmatically determinable name.</dd>
+<dt>Collapse duplicate links</dt><dd>When two visually adjacent things link to the same location, keep only one.</dd>
+<dt>Markup languages</dt><dd>Add language tags to the page and to any changes in language on the page.</dd>
+<dt>Declare languages</dt><dd>When the page or a phrase is not in one of my selected languages, do the following.</dd>
+<dt>Announce focus moves</dt><dd>Announce through the live region when the page moves the keyboard focus on its own.</dd>
+<dt>Announce page updates</dt><dd>When the page adds a status or error message after loading (a form result, “saved”, “added to basket”), announce it through a polite live region so a screen reader hears it without hunting.</dd>
+<dt>Announce when new page opens</dt><dd>When the page asks to open a new window after your click, announce it and then open it. If the page tries to open one on its own (a timer, a pop-under), it is blocked and you are asked if you want it.</dd>
+<dt>Show where I am in a process</dt><dd>Unless the process is of unknown length or changes depending on my choices, show a banner with the steps and where I am in the process.</dd>
+<dt>Explain disabled controls</dt><dd>For any disabled control, add text alongside it explaining why it is disabled and how to enable it, from the page’s own hints.</dd>
+<dt>Consistent menus</dt><dd>When this page departs from the site’s own pattern seen earlier this session, arrange its menus to be as consistent with the others as possible, in the order of menu items and in the naming of items that go to the same place.</dd>
+<dt>Announce page pattern changes</dt><dd>When this page departs from the site’s own habits seen earlier this session (navigation items in a different order or under different names, the help link moved or missing, a repeated block missing), add a note at the top describing the change.</dd>
+<dt>Highlight preselections</dt><dd>If the page has preselected a visible checkbox or switch, highlight it so an easy-to-miss preselection is noticed.</dd>
+<dt>Describe unusual input controls</dt><dd>When the page relies on any checked item below, say so at the top, with the keyboard alternative this browser provides where it has one.</dd>
+</dl></details>
+<details><summary>Forms <span class="n">3 settings</span></summary><dl>
+<dt>Form errors</dt><dd>When a form field is in error: programmatically tie its message to it, put a copy beside the field if the message sits elsewhere, add an icon and the word “Error” beside the color, and append how to fix it from the field’s own rules.</dd>
+<dt>Restore my entries</dt><dd>When I come back to a page I filled in earlier this session, put back what I entered before (but never remember passwords or passcodes).</dd>
+<dt>List field rules</dt><dd>Put each form field’s rules beside the field (required, the format, the length or range), as determined from the attributes the page enforces silently.</dd>
+</dl></details>
+<details><summary>Timing <span class="n">3 settings</span></summary><dl>
+<dt>Show me active if I am slow</dt><dd>When a server session has an expiry (its cookie) or the page runs an idle sign-out, keep the session alive with a quiet request to the page every few minutes, while I am present (window focused, recent input).</dd>
+<dt>Time remaining</dt><dd>Show me the time remaining and whether and how I can extend it, but only as I ask for it below.</dd>
+<dt>Reply display time</dt><dd>Show timed displays this much longer than the page would. Press Esc to hide.</dd>
+</dl></details>
+<details><summary>Motion and stimulation <span class="n">6 settings</span></summary><dl>
+<dt>Damp dangerous flashing</dt><dd>When flashing approaches the seizure threshold, freeze the flashing for 1 second.</dd>
+<dt>Flash limit (flashes a second)</dt><dd>The rate above which flashing is slowed as it happens.</dd>
+<dt>Mark live unaltered content</dt><dd>Mark, programmatically and with a red outline, any content that the browser currently cannot process and make accessible.</dd>
+<dt>Pause animations</dt><dd>Pause motion the page starts on its own.</dd>
+<dt>Block the page from vibrating</dt><dd>Stops the page from vibrating.</dd>
+<dt>Calm mode (less color, no motion)</dt><dd>Images, video and picture backgrounds desaturated; every animation and transition paused; animated GIFs frozen; playing media paused; anything flashing more than once a second slowed.</dd>
+</dl></details>
+<details><summary>Appearance <span class="n">16 settings</span></summary><dl>
+<dt>Focus ring color</dt><dd>Color of the keyboard focus ring.</dd>
+<dt>Focus ring thickness</dt><dd>Thickness of the keyboard focus ring drawn on the front.</dd>
+<dt>Link underline color</dt><dd>Color of the link underline.</dd>
+<dt>Link underline gap</dt><dd>Gap between the text and its underline, so the line does not touch the letters.</dd>
+<dt>Link underline thickness</dt><dd>Thickness of the underline drawn under links.</dd>
+<dt>SmartBrowser ALT mark</dt><dd>How text generated by the browser is marked.</dd>
+<dt>Emphasis color</dt><dd>The color used by the color, bold + color, highlight and box re-styles.</dd>
+<dt>Emphasis shown as</dt><dd>How emphasis is marked. “Marker” prepends a small glyph that a screen reader will read. “Re-style” restyles the text to stand out more.</dd>
+<dt>Marker: bold</dt><dd>The glyph placed before bold-only text in marker mode.</dd>
+<dt>Marker: caps</dt><dd>The glyph placed before all-caps text in marker mode.</dd>
+<dt>Marker: italic</dt><dd>The glyph placed before italic-only text in marker mode.</dd>
+<dt>Marker: underline</dt><dd>The glyph placed before underline-only text in marker mode.</dd>
+<dt>Re-style as</dt><dd>In re-style mode, how the emphasized text is restyled (e.g. “bold + color” makes every italic run bold and colored).</dd>
+<dt>Mark text that SmartBrowser changed</dt><dd>Mark every piece of text the browser wrote (rewritten sentences, spelled-out abbreviations, numeric equivalents) with a faint blue highlight.</dd>
+<dt>Show text that SmartBrowser changed</dt><dd>When SmartBrowser changes text, the original text is shown on hover, so nothing the browser wrote passes as the author’s.</dd>
+<dt>Show everything the SmartBrowser changed</dt><dd>Outline everything the SmartBrowser fixed on this page (every element given a role, a name, a language, a table marked as layout, every note it added) with a tag naming the fix, so the invisible repairs can be seen, for checking and for a screenshot.</dd>
+</dl></details>
+</div>
+
+    <h2 id="criteria">What it meets, criterion by criterion</h2>
+    <p>A table of every WCAG 2.2 success criterion and every WCAG 3.0 requirement, showing which the proof of concept meets on failing pages, which it does not yet, and how each is met, is being prepared for this page. It was asked for at TPAC and it is the right way to answer the fair question of how much is AI and how much is plain engineering.</p>
+    <!-- TODO(gregg): publish the criterion-by-criterion analysis here, e.g. from Provisions_and_Processes.xlsx, as an HTML table with columns: Criterion | Level | Met on failing pages? | How (deterministic / model) | Notes -->
+
+    <h2>The field</h2>
+    <p>The hooks a smart browser needs are already in browsers, and vendors are shipping the on-device models that make the judgment steps possible.</p>
+    <ul>
+      <li><strong>Chrome</strong> ships a small model (Gemini Nano) inside the browser and exposes it to extensions through its <a href="https://developer.chrome.com/docs/ai/prompt-api">Prompt API</a>, part of Chrome's <a href="https://developer.chrome.com/docs/ai/built-in">built-in AI</a>. The model is downloaded once and runs on the device; no page data goes to Google. A web-facing version is in development.</li>
+      <li><strong>Other engines.</strong> Firefox, Safari, and Edge are aware of this direction and each has on-device features of its own; none has committed to anything like a smart browser. Reaching them is part of the work. <!-- TODO: add verified links to each vendor's on-device AI and accessibility features --></li>
+      <li><strong>Reader modes and simplification</strong> in every major browser already restyle pages for the reader, without AI. They show that users accept browser-side changes to pages when the user asked for them.</li>
+      <li><strong>Agents that operate interfaces</strong>, the AI systems that can look at a screen and use it, are the general form of the info-bot idea and are advancing quickly outside accessibility.</li>
+    </ul>
+    <p>Know of work that belongs here? <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%3A%20related%20work">Tell us</a> and we will add it to the <a href="/library/">Library</a>.</p>
+
+    <h2 id="tpac">What the TPAC room said</h2>
+    <p>The idea was presented at the W3C's TPAC 2026 in a breakout, <a href="https://github.com/w3c/tpac2026-breakouts/issues/89">&ldquo;The Browser as Universal Interpreter: A 30-Year-Old Idea Whose Time Has Come,&rdquo;</a> led by Mike Paciello and Gregg Vanderheiden with Steve Faulkner moderating. Engineers from Google Chrome, including the developer-relations lead for the Prompt API and an engineering director, were in the room, along with people from the BBC, Cisco, and W3C staff.</p>
+    <p>The response was interest plus hard questions: will it scale to a site like CNN's front page or to pages that update constantly; can a page inject a prompt that makes the browser rewrite the DOM and leak data; who is responsible for content the browser generated; what happens to site analytics; should sites be able to opt sensitive flows like login out of rewriting; how can non-deterministic output be tested or standardized; what does running a model on every page load cost in energy and battery; and does each feature need AI at all. Two suggestions came with the questions: a community group is the lowest-barrier way to start, and even one criterion lifted off authors is worth doing. Each question is now an <a href="/contribute/#questions">open question</a> with a place to work on it.</p>
+
+    <h2>What is next</h2>
+    <ul>
+      <li>Publish the proof-of-concept code and the criterion-by-criterion analysis.</li>
+      <li>Draft an explainer with others that defines the smallest standardizable surface: the settings vocabulary a person carries from browser to browser, and what sites can declare about their pages.</li>
+      <li>Continue conversations with browser vendors toward a real prototype in a browser engine.</li>
+      <li>Explore a W3C community group if the community wants one.</li>
+      <li>Add power consumption and site opt-out to the list of things to get right, and follow up on a proposed standard for reporting accessibility problems back to sites so repairs do not have to be redone on every load.</li>
+    </ul>
+    <p>Follow progress on the <a href="/news/">news page</a> or by <a href="/contribute/#follow">email</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

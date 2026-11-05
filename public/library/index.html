@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library – Smart Browser</title>
+<meta name="description" content="The reference shelf for smart-browser work by anyone: papers, talks, standards, and related efforts.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Library – Smart Browser">
+<meta property="og:description" content="The reference shelf for smart-browser work by anyone: papers, talks, standards, and related efforts.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/" aria-current="page">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Library</h1>
+    <p class="lede">The reference shelf for smart-browser work: ours, and anyone else's. If it could help a browser fit pages to people, it belongs here, whether or not accessibility was the goal.</p>
+
+    <h2>What we collect</h2>
+    <ol>
+      <li><strong>Individually accessible experiences of inaccessible content.</strong> Work that makes a page usable by one person at the point of use, especially when the page itself did nothing for accessibility.</li>
+      <li><strong>Individualized web experiences that were not about accessibility.</strong> Reader modes, simplification, translation, summarization, personalization, agents that operate pages. Efforts that could advance accessibility even though they were built for other reasons.</li>
+      <li><strong>Smart browsers</strong> and browser capabilities moving in this direction, from any vendor, open source or commercial.</li>
+      <li><strong>Research</strong> of any kind that could advance smart browsers or the broader universal-interpreter model behind them.</li>
+    </ol>
+    <p>To add something, <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%20Library">email us</a> with a link and a sentence about why it belongs. Entries describe the work; they are not endorsements.</p>
+
+    <h2>Our papers and talks</h2>
+    <ul class="timeline">
+      <li id="stone-1991"><span class="year">1991</span>
+        <p><strong>Pervasive Accessible Technology.</strong> David Stone, World Congress on Technology for People with Disabilities, Washington, D.C. The first proposal of a &ldquo;functionally universal interpreter&rdquo;: an information infrastructure with an intelligent agent that adapts to the user rather than requiring the user to adapt. No online copy is known; if you have one, please tell us.</p></li>
+      <li id="assets-1996"><span class="year">1996</span>
+        <p><strong>Designing the World Wide Web for People with Disabilities: A User Centered Design Approach.</strong> Lila F. Laux, Peter R. McNally, Michael G. Paciello, and Gregg C. Vanderheiden. ASSETS '96, Vancouver, pp. 94&ndash;101. The panel paper where Paciello laid out pervasive accessible technology for the web, &ldquo;the equivalent of a personal interpreter for the person who is using the system,&rdquo; and Vanderheiden described presentation-independent information and &ldquo;everyone interfaces.&rdquo; <a href="/library/papers/laux-mcnally-paciello-vanderheiden-1996-assets.pdf">PDF</a></p></li>
+      <li id="chi-2024"><span class="year">2024</span>
+        <p><strong>Will AI allow us to dispense with all or most accessibility regulations?</strong> Gregg Vanderheiden and Crystal Yvette Marte. CHI EA '24, Honolulu. The case for shifting from &ldquo;inclusive products plus assistive technology&rdquo; to a universal interpreter (info-bot) plus individual user interface generators, with the benefits, problems, and policy consequences laid out. <a href="https://doi.org/10.1145/3613905.3644059">DOI</a> &middot; <a href="/library/papers/vanderheiden-marte-2024-chi.pdf">PDF</a></p></li>
+      <li id="menabling-2026"><span class="year">2026</span>
+        <p><strong>The end of &ldquo;One Interface for Everyone.&rdquo;</strong> Gregg Vanderheiden, M-Enabling Summit 2026. The talk that first showed the proof of concept and its 85 settings, the WCAG 3.0 analysis, and the two conditions for adoption. <!-- TODO(gregg): link slides (PDF) if you want them public --></p></li>
+      <li id="tpac-2026"><span class="year">2026</span>
+        <p><strong>The Browser as Universal Interpreter: A 30-Year-Old Idea Whose Time Has Come.</strong> Mike Paciello and Gregg Vanderheiden, W3C TPAC 2026 breakout, Steve Faulkner moderating. <a href="https://github.com/w3c/tpac2026-breakouts/issues/89">Session proposal</a>. Mike Paciello's accompanying paper, <em>Web Browsers as a Pervasive Accessibility Solution</em>, is a work in progress of about fifty pages; a link will be added when it is public. <a href="/status/#tpac">What the room said</a>. <!-- TODO(gregg): add links to Mike's paper and the session repo/minutes --></p></li>
+    </ul>
+
+    <h2>Standards and guidance referenced</h2>
+    <ul>
+      <li><a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>, W3C.</li>
+      <li><a href="https://www.w3.org/TR/wcag-3.0/">WCAG 3.0 Working Draft</a>, W3C.</li>
+      <li><a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a>, W3C.</li>
+      <li><a href="https://www.w3.org/WAI/adapt/">WAI-Adapt</a>, W3C: a vocabulary for content that adapts to user needs, one candidate for the standardizable surface.</li>
+      <li><a href="https://webaim.org/projects/million/">The WebAIM Million</a>: the annual analysis of the top one million home pages.</li>
+      <li><a href="https://developer.chrome.com/docs/ai/built-in">Built-in AI in Chrome</a> and the <a href="https://developer.chrome.com/docs/ai/prompt-api">Prompt API</a>, Google.</li>
+      <li><a href="https://overlayfactsheet.com/">Overlay Fact Sheet</a>: the accessibility community's statement on site-installed overlay widgets, and why a user-controlled browser capability is a different thing.</li>
+    </ul>
+
+    <h2>Related work by others</h2>
+    <p>This section is where other people's smart-browser work, individualized-experience work, and research will be listed, in the four categories above. It is empty on launch day on purpose: we would rather list what the community sends than guess. <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%20Library">Send the first entry</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

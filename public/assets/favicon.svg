@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Smart Browser">
+  <rect width="64" height="64" rx="14" fill="#0a6c6e"/>
+  <rect x="12" y="14" width="40" height="36" rx="5" fill="#ffffff"/>
+  <rect x="12" y="14" width="40" height="8" rx="5" fill="#d9f0f0"/>
+  <rect x="18" y="28" width="28" height="4" rx="2" fill="#15213b"/>
+  <rect x="18" y="36" width="20" height="4" rx="2" fill="#2f6fd6"/>
+  <rect x="16" y="34" width="24" height="8" rx="2" fill="none" stroke="#2f6fd6" stroke-width="2"/>
+  <rect x="18" y="44" width="24" height="3" rx="1.5" fill="#15213b"/>
+</svg>

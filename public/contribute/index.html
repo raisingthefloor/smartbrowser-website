@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contribute – Smart Browser</title>
+<meta name="description" content="How to join the Smart Browser effort: what we ask of browser makers, ways to contribute, the open questions, and how to follow the project.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Contribute – Smart Browser">
+<meta property="og:description" content="How to join the Smart Browser effort: what we ask of browser makers, ways to contribute, the open questions, and how to follow the project.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/" aria-current="page">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Contribute</h1>
+    <p class="lede">This only works as a collaboration. Time, expertise, testing, and hard questions are worth more to it than money, though money is welcome too.</p>
+
+    <h2 id="browsers">If you make a browser</h2>
+    <p>You are the people we most want to hear from, because the goal is not a new browser. It is for this to be built into the browsers everyone already uses, so that anyone who sits down at any common, free browser, anywhere, finds it there.</p>
+    <p>What we are asking, now:</p>
+    <ul>
+      <li>Help advance the idea and the code: review the approach, point us at the right surfaces in your engine, tell us where it will break.</li>
+      <li>Try the proof of concept against your engine and your on-device model when the code is public, and tell us what you find.</li>
+      <li>Join the work on the smallest standardizable surface: the settings a person carries from browser to browser, and what a site can declare about its pages.</li>
+      <li>Help answer the <a href="#questions">open questions</a> that are about browsers: scale, security, energy, interoperability.</li>
+    </ul>
+    <p>And later: build it in. <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%3A%20browser%20vendor">Start a conversation</a>.</p>
+
+    <h2>Ways to contribute</h2>
+    <div class="two-col">
+      <div>
+        <h3>Test it, as someone who depends on it</h3>
+        <p>Nothing replaces current practice until people with disabilities judge that it works as well or better. If you use a screen reader, magnification, switch access, or simply need pages to be calmer or plainer, your judgment is the one that counts. We will post how to take part when the proof of concept is ready to install.</p>
+        <h3>Engineer</h3>
+        <p>Browser internals, extensions, on-device models, accessibility APIs, security. The <a href="/code/">code</a> is opening soon; the <a href="#questions">open questions</a> are open now.</p>
+        <h3>Research</h3>
+        <p>Studies of individual interfaces, text simplification, image description, interface understanding, evaluation methods, energy use. Send published work for the <a href="/library/">Library</a>, or propose a study.</p>
+      </div>
+      <div>
+        <h3>Standards and policy</h3>
+        <p>What should be standardized, how conformance would be judged when the browser does the work, how regulation written for authors applies when fit happens at the user. We hope this work finds a home in the W3C when the community wants it.</p>
+        <h3>Write and explain</h3>
+        <p>Plain-language explanations, translations, and documentation help this reach people who are not engineers.</p>
+        <h3>Fund</h3>
+        <p>Raising the Floor sponsors this site and the <a href="/rewards/">challenge awards</a>. Contributions to the work are welcome; <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%3A%20funding">email us</a> to talk about how. Raising the Floor is a U.S. nonprofit.</p>
+      </div>
+    </div>
+
+    <h2 id="questions">Open questions</h2>
+    <p>Most of these were put to us at TPAC 2026 by people who know browsers, sites, security, and standards. They are listed in the spirit in which they were given: pointing to a hole in the boat does not sink it. The hole was already there, and we would rather know. Each question has a number so you can refer to it; pick one and work on it, or add one we have missed.</p>
+    <ol class="questions">
+<li id="q1"><h3>Scale on real pages</h3><p>A big news front page or a web application has hundreds of text blocks, controls, and images. Fitting it could mean many parallel model calls, and changing the DOM can break the page&#x27;s own scripts and layout. What works on a toy page may fall over on a real one.</p><p class="raised">Raised by a Chrome engineer who works on the Prompt API. What is the right unit of work, how much can be done without the model, and how should the browser decide what to fit first?</p></li>
+<li id="q2"><h3>Live, constantly changing content</h3><p>Pages that update themselves through live regions and scripts keep changing the DOM out from under any repair.</p><p class="raised">Raised by an engineer at Cisco. How does a fit survive re-rendering, and when should the browser stop trying?</p></li>
+<li id="q3"><h3>Prompt injection and security</h3><p>If the browser rewrites the DOM on the advice of a model, a page could carry text crafted to steer that model: to change what a form does, to send cookies somewhere else, to rewrite a login page.</p><p class="raised">Raised by a Chrome engineer. What must never be model-controlled, and how is the model&#x27;s view of a page kept separate from its authority over it?</p></li>
+<li id="q4"><h3>Site control over sensitive flows</h3><p>A site may need to say: on this authentication page, change text size if you like, but do not rewrite the content. Today there is no vocabulary for that.</p><p class="raised">Raised by an engineer at Cisco with a security background. What capabilities can a site disallow, how does it declare that, and how do we keep the mechanism from becoming a blanket opt-out?</p></li>
+<li id="q5"><h3>Responsibility for generated content</h3><p>A person may forget the smart browser is on, meet a problem the browser created, and report it to the site. Who is responsible for what the browser generated?</p><p class="raised">Raised by an engineer at Cisco. The proof of concept marks every change and shows the original; is that enough, and what else is needed?</p></li>
+<li id="q6"><h3>Site analytics and experimentation</h3><p>Many sites improve themselves through fine-grained measurement of what visitors see and do. A browser that rewrites pages breaks the link between what the site sent and what the visitor used.</p><p class="raised">Raised by an engineer at the BBC. Could a standard, allow-listed set of feedback data pass back to sites so measurement survives while privacy holds?</p></li>
+<li id="q7"><h3>Testing and interoperability</h3><p>AI output is not deterministic: the same page and settings may not fit the same way twice, so conformance cannot be tested the way it is today. What can be standardized may be only the settings vocabulary and what sites can declare.</p><p class="raised">Raised by W3C staff. What is the smallest standardizable surface, and what guarantees can a person carry from one browser to another?</p></li>
+<li id="q8"><h3>Energy and battery</h3><p>Running a model on every page load, on every device in the world, has a cost in electricity and battery life. A five-year-old Mac that handles it is still a high-end machine.</p><p class="raised">Raised by an engineer at the BBC. How little model work can a fit need, what should be cached or remembered, and what does it take to run on entry-level hardware?</p></li>
+<li id="q9"><h3>Does this feature need AI at all?</h3><p>Many of the proof of concept&#x27;s settings are preferences browsers could have honored for years with no model. Each feature should use the simplest tool that works.</p><p class="raised">Raised by accessibility specialists in the room, including a member of the W3C APA working group. Which settings are deterministic, which need judgment, and where is the line?</p></li>
+<li id="q10"><h3>Reporting problems back so they are fixed once</h3><p>If the browser finds a problem and fixes it for one person, the site could be told, fix it at the source, and no one&#x27;s browser would have to fix it again.</p><p class="raised">Raised by a member of the W3C APA working group, who pointed to a proposed standard for reporting accessibility problems. How would reports flow, and how would consent and privacy be handled?</p></li>
+<li id="q11"><h3>How much faster with real teams?</h3><p>The proof of concept took one person-month by two people, neither an AI specialist. What would teams of browser engineers and AI specialists achieve?</p><p class="raised">Asked by the project. This is partly a question for browser vendors.</p></li>
+<li id="q12"><h3>How much less model with a tuned model?</h3><p>The proof of concept uses a general 14-billion-parameter model. A model tuned to this one job could be far smaller.</p><p class="raised">Asked by the project. When will entry-level computers run what is needed, and can the need be shrunk to meet them sooner?</p></li>
+<li id="q13"><h3>Is it as good or better, by the judgment of people with disabilities?</h3><p>The condition on everything else. The results need to be tested by the people who will depend on them, across types, degrees, and combinations of disability, and compared with what they have today.</p><p class="raised">Asked by the project. What does that evaluation look like, who runs it, and what counts as passing?</p></li>
+</ol>
+    <p>To respond to a question, add one, or propose an answer, <a href="https://github.com/raisingthefloor/smartbrowser-website/issues">open an issue on GitHub</a> (mention the question number) or <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%3A%20open%20question">email us</a>. When the project repository opens, discussion will move there.</p>
+
+    <h2 id="follow">Follow the project</h2>
+    <ul>
+      <li><strong>Email updates.</strong> A short note when something changes: new code, new results, new work in the Library. Until the signup form is connected, <a href="mailto:gregg@raisingthefloor.org?subject=Subscribe%20to%20Smart%20Browser%20updates">email us</a> and ask to be added.
+      <!-- TODO(gregg/christopher): paste the Mailchimp embedded form here. In Mailchimp: Audience > Signup forms > Embedded forms > copy the <form> markup. Keep the label elements visible (not placeholder-only) so the form meets WCAG. --></li>
+      <li><strong>RSS.</strong> <a href="/feed.xml">Subscribe to the news feed</a>.</li>
+      <li><strong>GitHub.</strong> Watch <a href="https://github.com/raisingthefloor/smartbrowser-website">this site's repository</a> now, and the project repository when it opens.</li>
+    </ul>
+
+    <h2>Who we are</h2>
+    <p>&ldquo;We&rdquo; is everyone who joins this effort. The proof of concept was built by Gregg Vanderheiden and James Vanderheiden. The idea was presented at TPAC 2026 with Mike Paciello. The site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>. Contact: <a href="mailto:gregg@raisingthefloor.org">gregg@raisingthefloor.org</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the browser – Smart Browser</title>
+<meta name="description" content="The broader info-bot and individual user interface generator idea that the smart browser is one instance of.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Beyond the browser – Smart Browser">
+<meta property="og:description" content="The broader info-bot and individual user interface generator idea that the smart browser is one instance of.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Beyond the browser</h1>
+    <p class="lede">The smart browser is one instance of a larger idea. This page sketches the larger idea so the connection is clear; the rest of this site stays with the browser, which is the easiest version to understand and to solve.</p>
+    <p>Everything with a screen or a digital interface presents the same problem the web does. Almost none of it is built to be usable by people with every type, degree, and combination of disability, and most of it is &ldquo;closed&rdquo;: there is no way to attach assistive technology to a microwave, a kiosk, or a hotel television.</p>
+    <p>The proposal in <a href="/library/#chi-2024">&ldquo;Will AI allow us to dispense with all or most accessibility regulations?&rdquo;</a> (Vanderheiden and Marte, CHI 2024) has two parts:</p>
+    <ul>
+      <li>An <strong>information robot</strong> (info-bot): a single open-source agent that can look at any standard interface, the one built for everyone, and understand and operate it about as well as the median user can. It needs no API and nothing from the manufacturer.</li>
+      <li><strong>Individual user interface generators</strong> (IUIGs): one per person, tuned to that person's abilities, knowledge, culture, and preferences, which take what the info-bot understands and present a usable interface for every device the person encounters. A new microwave, a new streaming service, a new ticket machine would all show up with the interface that person already knows.</li>
+    </ul>
+    <p>The paper argues that this would reverse the current approach, from &ldquo;every maker builds accessibility in, plus assistive technology as a safety net,&rdquo; to &ldquo;a universal interpreter plus personal interfaces, with built-in accessibility as the convenient first choice where it exists.&rdquo; It also sets out the problems: feasibility and timeline, privacy (it must run locally), funding, the cost of building IUIGs for every kind of person, distributive justice, the disruption to today's accessibility industry, and the rethinking of policy and regulation that would follow.</p>
+    <p>A smart browser is the info-bot and IUIG idea applied to one kind of interface, the web page, where the browser already provides the structure the interpreter needs. If it can be made to work there, with people with disabilities judging that it works, it becomes much easier to argue for the rest.</p>
+    <p><a href="/what/">Back to what a smart browser is</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

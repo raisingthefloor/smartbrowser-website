@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a smart browser is – Smart Browser</title>
+<meta name="description" content="What a smart browser does, how it works, what makes it different from overlays, and what this site is for.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="What a smart browser is – Smart Browser">
+<meta property="og:description" content="What a smart browser does, how it works, what makes it different from overlays, and what this site is for.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/" aria-current="page">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>What a smart browser is</h1>
+    <p class="lede">A web browser that notices when a page does not work for the person using it, and changes just enough of the page so that it does. Tuned to that person, not to an average. Running on their own device.</p>
+
+    <h2>What it does</h2>
+    <p>Every web page arrives at your browser as structure (the DOM), as an accessibility tree that assistive technologies read, and as styles. A smart browser looks at all three, and at the rendered page, through the lens of one person's settings. Where the page already meets those settings, it is left alone. Where it does not, the browser intervenes:</p>
+    <ul>
+      <li>It <strong>repairs</strong> what is missing or broken: names for unlabeled buttons, descriptions for images, headings and landmarks for structure, labels and error messages for forms, keyboard access and sensible tab order.</li>
+      <li>It <strong>adjusts</strong> presentation to the person: minimum text size, maximum or minimum contrast, spacing, fonts, color themes, underlined links, a calm mode with no motion and muted color.</li>
+      <li>It <strong>interprets</strong> content the person cannot use as written: rewriting text to the reading level they choose, explaining idioms and abbreviations, turning a chart into a table, describing an image and answering questions about it.</li>
+      <li>It <strong>mediates</strong> interaction: keeping a session alive for someone who is slow, allowing paste where a form blocks it, explaining why a control is disabled, holding timed messages on screen until they have been read.</li>
+    </ul>
+    <p>Many of these need no AI at all. They are deterministic repairs and style changes that browsers have been able to make for years. The small local model is used only where judgment is needed: what an unlabeled icon does, what an image shows, how to say a sentence more simply.</p>
+
+    <h2>What makes it different</h2>
+    <h3>It fits the individual, not the category</h3>
+    <p>Guidelines have to pick one bar for everyone. Text simplified to a fifth-grade level helps some readers and fails those who read at third grade or ninth. A smart browser has no bar: the person slides the level until the page makes sense, and slides it back when a site turns out to be easy. The same is true of contrast, where people with low vision and people with light sensitivity have opposite needs that no single rule can satisfy.</p>
+    <h3>It goes past what can be tested</h3>
+    <p>Accessibility standards can only require what can be verified. That leaves out a great deal that is known to help, especially for people with cognitive, language, and learning disabilities. Those things do not need to be testable when the person's own browser does them at the person's request.</p>
+    <h3>It is user-controlled and local</h3>
+    <p>A smart browser is something a person turns on in their own browser. It is not installed by a website, it does not phone home, and the page's own code is never the one deciding what a visitor needs. This is the opposite of the website &ldquo;overlay&rdquo; widgets that the accessibility community has <a href="https://overlayfactsheet.com/">documented problems with</a>: those are chosen by site owners, run on the site's terms, and promise conformance to the site rather than fit to the person.</p>
+    <h3>It shows its work</h3>
+    <p>Everything the browser changes is marked. Hover or tap and the original is there. If a page misbehaves, one switch gives the straight-through rendering. Nothing the browser wrote passes as the author's words.</p>
+    <h3>It is a volume control, not a replacement</h3>
+    <p>If content arrives accessible, the smart browser does not touch it. It acts only where this person cannot use what was sent. Authors who build accessible pages are still the best starting point, and a smart browser makes their work reach further rather than making it unnecessary.</p>
+
+    <h2>How it works, step by step</h2>
+    <ol>
+      <li>A page loads. The browser passes the DOM, the accessibility tree, and the rendered layout to a checker that runs on the device.</li>
+      <li>The checker compares the page with this person's settings and finds what fails them: a control with no name, text below their minimum size, a paragraph above their reading level.</li>
+      <li>Deterministic fixes are applied directly: styles, structure, labels that can be inferred from the page itself.</li>
+      <li>Where judgment is needed, the on-device model is asked a narrow question: what does this button do, what does this image show, say this sentence at this level. Nothing leaves the device.</li>
+      <li>The browser applies the result to the page and the accessibility tree, marks each change, and the person carries on. A screen reader announces the control by its new name; a reader sees the simpler sentence with the original a tap away.</li>
+    </ol>
+
+    <h2>What this site is</h2>
+    <p>This is the collaboratorium for the Smart Browser project: the one place to find the work, the code, the open questions, and the people. It exists to do four things, in this order:</p>
+    <ol>
+      <li><strong>Encourage collaboration</strong>, especially from the people who make browsers, because the goal is for this to be built into every common free browser.</li>
+      <li><strong>Be the central reference point</strong> for work by anyone on smart browsers, on individually accessible experiences of inaccessible content, on individualized web experiences that were never about accessibility but could advance it, and on research that could help.</li>
+      <li><strong>Let people follow</strong> the project as it moves.</li>
+      <li><strong>Let people comment on and contribute</strong> to the concept and the work.</li>
+    </ol>
+    <p>The site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>, a nonprofit. The project belongs to everyone who joins it. Eventually we hope this work finds a home in the W3C; when the community there wants to take it up, it will be welcomed.</p>
+
+    <h2>Words we use</h2>
+    <dl>
+      <dt>Smart browser</dt>
+      <dd>A browser, or a capability built into a browser, that fits pages to the individual person as described above. Not a brand name.</dd>
+      <dt>Proof of concept (POC)</dt>
+      <dd>The first-draft smart browser built to find out whether the idea works, described under <a href="/status/">Status</a>. It is a model and a template, not a product.</dd>
+      <dt>Fit</dt>
+      <dd>What a smart browser does to a page for one person: the set of repairs, adjustments, and interpretations their settings call for.</dd>
+      <dt>Setting</dt>
+      <dd>One thing a person can ask for. The proof of concept has 85, from &ldquo;Underline links&rdquo; to &ldquo;Variable text simplification.&rdquo;</dd>
+      <dt>Accessibility tree, DOM, user styles, on-device model</dt>
+      <dd>The parts of a modern browser that make this possible. The accessibility tree is what screen readers read; the DOM is the page's structure; user styles let the browser restyle a page; an on-device model is a small AI model that runs on the user's own computer with no network connection.</dd>
+    </dl>
+
+    <aside class="note">
+      <h2 style="margin-top:0;font-size:var(--step-1)">Beyond the browser</h2>
+      <p>The browser is the easiest place to start, but the same idea applies to anything with a digital interface: a thermostat, a ticket machine, a television. That broader program, an open <em>info-bot</em> that can understand any standard interface paired with <em>individual user interface generators</em> that present it the way each person needs, is described in a <a href="/library/#chi-2024">2024 CHI paper</a>. This site is about the browser; the broader idea has <a href="/what/beyond-the-browser/">a page of its own</a>.</p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

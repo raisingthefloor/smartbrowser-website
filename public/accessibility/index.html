@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility statement – Smart Browser</title>
+<meta name="description" content="What smartbrowser.site aims for in accessibility, what falls short, and how to tell us.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Accessibility statement – Smart Browser">
+<meta property="og:description" content="What smartbrowser.site aims for in accessibility, what falls short, and how to tell us.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Accessibility statement</h1>
+    <p class="lede">This site is about fitting pages to people, so it had better be usable by everyone. Here is what we aim for, what we know falls short, and how to tell us when something does not work.</p>
+    <h2>Our target</h2>
+    <p>Every page on smartbrowser.site, except the demonstration pages described below, is intended to conform to the <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines 2.2</a> at Level AA, and to be fully usable with a screen reader, with keyboard alone, with magnification and large text, with user style sheets, in high contrast, and with motion reduced.</p>
+    <h2>What we did</h2>
+    <ul>
+      <li>Real headings, landmarks, and a skip link on every page; link text that makes sense on its own.</li>
+      <li>Text and background colors checked for contrast in both light and dark themes; no information carried by color alone.</li>
+      <li>Everything works without JavaScript. The interactive demonstration on the home page is decorative for assistive technology; the changes it illustrates are written out as text beside it.</li>
+      <li>No motion starts on its own except a brief blink inside the home-page demonstration, which stops within five seconds and is disabled entirely when your system asks for reduced motion.</li>
+      <li>A Display control on every page lets you choose larger text, more spacing, and a light or dark theme, in the spirit of the project. Your browser's own zoom and text-size settings also work.</li>
+      <li>Fonts are your system's own, so your installed accessibility fonts apply, and no third-party font service is contacted.</li>
+    </ul>
+    <h2>Deliberately inaccessible pages</h2>
+    <p>Pages under <a href="/demo/">/demo/</a> are intentionally inaccessible. They exist so that a smart browser has something to fix. Each one carries a warning at the top and a link back here. They are excluded from the conformance target above.</p>
+    <h2>Tell us</h2>
+    <p>If anything on this site does not work for you, we want to know and we will fix it. <a href="mailto:gregg@raisingthefloor.org?subject=smartbrowser.site%20accessibility">Email gregg@raisingthefloor.org</a> or <a href="https://github.com/raisingthefloor/smartbrowser-website/issues">open an issue on GitHub</a>. Please say which page and, if you can, what you were using.</p>
+    <p>This statement was written in November 2026 and will be updated as the site changes.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

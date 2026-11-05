@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Smart Browser news</title>
+<link>https://smartbrowser.site/news/</link>
+<atom:link href="https://smartbrowser.site/feed.xml" rel="self" type="application/rss+xml"/>
+<description>News from the Smart Browser project: a browser that fits the page to the person.</description>
+<language>en</language>
+<item>
+<title>smartbrowser.site opens</title>
+<link>https://smartbrowser.site/news/#site-launch</link>
+<guid isPermaLink="false">smartbrowser-site-launch-2026-11</guid>
+<pubDate>Thu, 05 Nov 2026 12:00:00 -0800</pubDate>
+<description>The shared reference point for smart-browser work is open: what the idea is, why it matters, where the proof of concept stands, a library of related work, and the open questions.</description>
+</item>
+<item>
+<title>TPAC 2026 breakout: the browser as a universal interpreter</title>
+<link>https://smartbrowser.site/news/#tpac-2026</link>
+<guid isPermaLink="false">smartbrowser-tpac-2026</guid>
+<pubDate>Wed, 28 Oct 2026 12:00:00 -0700</pubDate>
+<description>Mike Paciello and Gregg Vanderheiden presented the idea and the proof of concept at the W3C's TPAC 2026. Chrome engineers, the BBC, Cisco, and W3C staff responded with interest and hard questions, now listed as the project's open questions.</description>
+</item>
+<item>
+<title>First-draft proof of concept shown at M-Enabling 2026</title>
+<link>https://smartbrowser.site/news/#menabling-2026</link>
+<guid isPermaLink="false">smartbrowser-menabling-2026</guid>
+<pubDate>Thu, 15 Oct 2026 12:00:00 -0700</pubDate>
+<description>In one person-month, a first-draft smart browser running entirely on a five-year-old laptop made pages that fail WCAG satisfy about half of the Level A and AA criteria.</description>
+</item>
+</channel>
+</rss>

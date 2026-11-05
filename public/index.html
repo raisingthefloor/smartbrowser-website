@@ -1,19 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Smart Browser</title>
-    <style>
-        body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif; background: #fff; color: #222; }
-        main { text-align: center; padding: 1rem; }
-        @media (prefers-color-scheme: dark) { body { background: #111; color: #eee; } }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Browser</title>
+<meta name="description" content="A smart browser repairs and reshapes any web page, on the person&#x27;s own device, to fit the way they see, read, hear, and move. An open collaboration to make it real in every common browser.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Smart Browser">
+<meta property="og:description" content="A smart browser repairs and reshapes any web page, on the person&#x27;s own device, to fit the way they see, read, hear, and move. An open collaboration to make it real in every common browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
 </head>
 <body>
-    <main>
-        <h1>Smart Browser (dev)</h1>
-        <p>Coming soon.</p>
-    </main>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>What if the browser fixed the page for you?</h1>
+      <p class="lede">A smart browser repairs and reshapes any web page, on your own device, to fit the way you see, read, hear, and move. Even pages whose authors did nothing for accessibility.</p>
+      <p>The pieces now exist in ordinary browsers: the page structure, the accessibility tree, user styles, and small AI models that run locally. A first proof of concept is working. This site is where the people building it, studying it, and depending on it come together.</p>
+      <ul class="actions">
+        <li><a class="btn btn-solid" href="/what/">How it works</a></li>
+        <li><a class="btn" href="/contribute/">Join the effort</a></li>
+      </ul>
+    </div>
+    <figure class="fit" data-fit="none" data-marks="on">
+      <div class="fit-controls">
+        <fieldset>
+          <legend>Fit this sample page to&hellip;</legend>
+          <div class="people">
+            <label><input type="radio" name="fit-person" value="none" checked> No one (as sent)</label>
+            <label><input type="radio" name="fit-person" value="maria"> Maria, who reads at a 4th-grade level</label>
+            <label><input type="radio" name="fit-person" value="devon"> Devon, who has low vision</label>
+            <label><input type="radio" name="fit-person" value="aisha"> Aisha, who uses a screen reader</label>
+            <label><input type="radio" name="fit-person" value="lee"> Lee, who needs calm pages</label>
+          </div>
+        </fieldset>
+        <div class="marks">
+          <input type="checkbox" id="fit-marks" name="fit-marks" checked>
+          <label for="fit-marks">Mark what the browser changed <span class="changed-key" aria-hidden="true">like this</span></label>
+        </div>
+        <div role="status" class="visually-hidden"></div>
+      </div>
+      <div class="fit-stage">
+<div class="mock" aria-hidden="true">
+  <div class="bar">
+    <span class="logo">Harbor City Transit</span>
+    <span class="icon">&#9906;<span class="lbl ch-aisha">Search</span></span>
+    <span class="icon">&#8801;<span class="lbl ch-aisha">Menu</span></span>
+  </div>
+  <div class="tagline">Moving the city, one stop at a time</div>
+  <span class="alert blink ch-devon ch-lee">ALERT</span>
+  <span class="hed ch-devon ch-aisha">Route 7 service change starting Monday</span>
+  <p class="ch-devon ch-lee"><span class="complex">Due to unforeseen infrastructure remediation activities, Route 7 will be subject to a temporary diversion, with anticipated restoration of standard operations contingent upon contractor completion.</span><span class="simple ch-maria">Route 7 will take a different path while the road is repaired. Normal service will come back when the work is done.</span>
+  Riders who need <abbr class="ch-maria">ADA<span class="meaning"> (Americans with Disabilities Act)</span></abbr> paratransit should call ahead. We expect service to be <span class="idiom ch-maria">back on track<span class="meaning"> (working normally again)</span></span> by Friday; the <abbr class="ch-maria">ETA<span class="meaning"> (estimated time)</span></abbr> for each stop is on the schedule page.</p>
+  <span class="img ch-lee">
+    <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+      <rect width="320" height="90" fill="#eef3e8"/>
+      <path d="M10 60 H120 L160 25 H310" fill="none" stroke="#7a9" stroke-width="6"/>
+      <path d="M120 60 H200 L230 25" fill="none" stroke="#e74" stroke-width="6" stroke-dasharray="10 6"/>
+      <rect x="150" y="48" width="60" height="22" fill="#fc5" stroke="#b80" stroke-width="2"/>
+      <circle cx="40" cy="60" r="6" fill="#345"/><circle cx="280" cy="25" r="6" fill="#345"/>
+    </svg>
+    <span class="cap ch-aisha">Image: Map of the Route 7 detour. Buses leave Main Street at 5th Avenue, follow Harbor Road around the construction zone, and rejoin at 9th Avenue.</span>
+  </span>
+  <p class="ch-devon ch-lee"><span class="lnk vague ch-devon">Click here</span><span class="lnk clear ch-aisha">Read the Route 7 detour schedule</span> for stop-by-stop times.</p>
+  <form>
+    <span class="lbl ch-aisha" style="margin:0 0.3rem 0 0">Email address</span><span class="field ch-devon">Email</span>
+    <span class="err ch-devon ch-aisha">Invalid<span class="why"> &ndash; enter an address with an @ sign, like name@example.com</span></span>
+  </form>
+</div>
+</div>
+      <figcaption class="fit-live">
+        <h2>What the page looks like as sent</h2>
+        <ul><li class="none">Gray 11-pixel justified text, two icon buttons with no names, a blinking alert, a map with no description, a &ldquo;Click here&rdquo; link, an idiom and two abbreviations, and an email field with no label and a red-only error. Pick a person above to see it fitted to them.</li></ul>
+        <p class="small">A simulation in plain HTML of what the proof of concept does on real pages. The sample page is fictional. The same page is available as a <a href="/demo/transit-notice.html">deliberately inaccessible demo page</a> to try with a smart browser.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap home-grid">
+    <div>
+      <h2>The idea in one minute</h2>
+      <p>Accessibility today asks every website to be built for the average person with each disability. After decades of guidelines, lawsuits, and good work, <a href="/why/">about 96% of home pages still have detectable failures</a>, and even a perfectly conforming page leaves many people out, because many needs cannot be written as testable rules.</p>
+      <p>A smart browser turns the problem around. It keeps the page the author made, and when something on it does not work for the person in front of it, the browser changes that one thing: a missing label, gray-on-gray text, a paragraph written at college level, a flashing banner. It runs on the person's own computer, with a small local model, so nothing about them leaves the device. If the page already works for them, it does nothing at all.</p>
+      <p>The goal is not a new browser. It is for this capability to be built into every common, free browser, so it is simply there wherever anyone sits down.</p>
+      <ul class="actions">
+        <li><a class="btn" href="/what/">What a smart browser is</a></li>
+        <li><a class="btn" href="/status/">Where the project stands</a></li>
+      </ul>
+    </div>
+    <aside class="latest" aria-labelledby="latest-h">
+      <h2 id="latest-h">Latest</h2>
+      <ul class="datelist">
+        <li><time datetime="2026-11">November 2026</time> <a href="/news/#site-launch">smartbrowser.site opens</a> as the shared reference point for smart-browser work. Send us anything we are missing.</li>
+        <li><time datetime="2026-10">October 2026</time> <a href="/news/#tpac-2026">TPAC 2026 breakout</a>: the browser as a universal interpreter. Chrome engineers, the BBC, Cisco, and W3C staff pressed on scale, security, consent, and energy use. <a href="/contribute/#questions">The open questions</a> came out of that room.</li>
+        <li><time datetime="2026-10">October 2026</time> First-draft proof of concept: in one person-month, pages that failed WCAG satisfied about half of Level A and AA criteria, running entirely on a five-year-old laptop. <a href="/status/">Details and caveats</a>.</li>
+      </ul>
+      <p class="small" style="margin:0.8rem 0 0"><a href="/news/">All news</a> &middot; <a href="/feed.xml">RSS</a> &middot; <a href="/contribute/#follow">Email updates</a></p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Who this site is for</h2>
+    <div class="three-col">
+      <div>
+        <h3>People who make browsers</h3>
+        <p>You already have the DOM, the accessibility tree, user styles, and on-device models. We want your help now to advance the idea and the code, and later to build it in. <a href="/contribute/#browsers">What we are asking of browser makers</a>.</p>
+      </div>
+      <div>
+        <h3>People who build, test, and study accessibility</h3>
+        <p>Engineers, researchers, standards people, and people with disabilities who will judge whether this works. Nothing replaces current practice until you say it works as well or better. <a href="/contribute/">Ways to contribute</a>.</p>
+      </div>
+      <div>
+        <h3>Anyone working on related things</h3>
+        <p>Reader modes, simplification, personalization, agents that operate interfaces, research on individual interfaces. If it could advance smart browsers, it belongs in the <a href="/library/">Library</a>, even if accessibility was never the goal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

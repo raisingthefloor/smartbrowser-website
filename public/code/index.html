@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code – Smart Browser</title>
+<meta name="description" content="Open-source code from the Smart Browser project: the proof of concept, this website, licenses, and how to contribute.">
+<meta name="theme-color" content="#0a6c6e">
+<meta property="og:title" content="Code – Smart Browser">
+<meta property="og:description" content="Open-source code from the Smart Browser project: the proof of concept, this website, licenses, and how to contribute.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Smart Browser news" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var p=JSON.parse(localStorage.getItem('sb-display')||'{}');['size','spacing','theme'].forEach(function(k){if(p[k]&&p[k]!=='default'&&p[k]!=='auto')document.documentElement.setAttribute('data-'+k,p[k]);});}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">Smart Browser <span class="tag">A browser that fits the page to the person</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/what/">What</a></li>
+        <li><a href="/why/">Why</a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/library/">Library</a></li>
+        <li><a href="/code/" aria-current="page">Code</a></li>
+        <li><a href="/contribute/">Contribute</a></li>
+        <li><a href="/rewards/">Rewards</a></li>
+      </ul>
+    </nav>
+    <details class="display-ctl">
+      <summary>Display</summary>
+      <div class="panel">
+        <fieldset>
+          <legend>Text size</legend>
+          <label><input type="radio" name="size" value="default" checked> Normal</label>
+          <label><input type="radio" name="size" value="larger"> Larger</label>
+          <label><input type="radio" name="size" value="largest"> Largest</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spacing</legend>
+          <label><input type="radio" name="spacing" value="default" checked> Normal</label>
+          <label><input type="radio" name="spacing" value="more"> More space</label>
+        </fieldset>
+        <fieldset>
+          <legend>Colors</legend>
+          <label><input type="radio" name="theme" value="auto" checked> Match my device</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <button type="button" class="btn" data-reset>Reset</button>
+        <p class="small" style="margin:0.8rem 0 0">These choices stay in this browser only. A smart browser would do this, and far more, on every site.</p>
+      </div>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="prose">
+  <div class="wrap">
+    <h1>Code</h1>
+    <p class="lede">Everything this project produces is open source. Here is what exists, where it will live, and how to get it.</p>
+
+    <h2>The proof-of-concept smart browser</h2>
+    <p>The first-draft proof of concept described under <a href="/status/">Status</a> is being prepared for public release. It will be published under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>, which lets anyone use, change, and ship it, and includes an explicit patent grant from each contributor so that browser vendors can adopt the code with confidence.</p>
+    <ul>
+      <li><strong>Source code:</strong> a public repository on GitHub, separate from this website. Link to follow. <!-- TODO(gregg): add the POC repository URL once created, e.g. https://github.com/raisingthefloor/smartbrowser --></li>
+      <li><strong>Installer:</strong> a downloadable build for people who want to try it without building it. The current version runs on Apple-silicon Macs with enough memory for a 14-billion-parameter model (about 12 GB in use). Link to follow. <!-- TODO(gregg): installer download link, platform, and minimum hardware --></li>
+      <li><strong>What it is technically:</strong> to be described here when the repository opens: how it is built, which browser engine it sits on, and how the local model is loaded. <!-- TODO(gregg): one paragraph on the architecture (extension / app / modified browser), model loading, and platforms --></li>
+    </ul>
+
+    <h2>This website</h2>
+    <p>The site is plain HTML, CSS, and a little JavaScript with no build step, so anyone can read and fix it. The repository is public: <a href="https://github.com/raisingthefloor/smartbrowser-website">raisingthefloor/smartbrowser-website</a>. Found a mistake or an accessibility problem? <a href="https://github.com/raisingthefloor/smartbrowser-website/issues">Open an issue</a>. The <code>dev</code> branch is the shared draft; <code>main</code> is what you are reading.</p>
+
+    <h2>Related open-source work</h2>
+    <p>Open-source code by others that advances smart browsers will be listed here with the Library. <a href="mailto:gregg@raisingthefloor.org?subject=Smart%20Browser%20code">Tell us about yours</a>.</p>
+
+    <h2>Contributing code</h2>
+    <p>When the repository opens, contributions will follow the usual path: an issue first for anything larger than a fix, then a pull request. Contributors sign off their commits under the <a href="https://developercertificate.org/">Developer Certificate of Origin</a>; there is no contributor license agreement to sign. A code of conduct and contribution guide will be in the repository.</p>
+    <p>The settings vocabulary, the list of 85 things a person can ask for and what each means, is a contribution surface in its own right: proposals for new settings, better names, and clearer descriptions are welcome from anyone, especially from people with disabilities and the people who work with them. <a href="/status/#explorer">See the current list</a>.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>Smart Browser</strong> is an open collaboration to prove that a browser can fit any web page to the person using it. Everyone who joins the effort is part of it. This site is sponsored by <a href="https://raisingthefloor.org">Raising the Floor</a>.</p>
+      <p>The proof of concept was funded in part by the National Science Foundation (Grant 2312370) and the National Institute on Disability, Independent Living, and Rehabilitation Research, Administration for Community Living, U.S. Department of Health and Human Services (Grant 90REGE008). Opinions here are those of the authors, not the funding agencies.</p>
+      <p>Text on this site is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Pages marked as demonstration pages are deliberately inaccessible; everything else aims to meet WCAG 2.2 AA. <a href="/accessibility/">Accessibility statement</a>.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/feed.xml">RSS feed</a></li>
+        <li><a href="/demo/">Demonstration pages</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href="https://github.com/raisingthefloor/smartbrowser-website">This site on GitHub</a></li>
+        <li><a href="mailto:gregg@raisingthefloor.org">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
